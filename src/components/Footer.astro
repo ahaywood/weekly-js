@@ -1,0 +1,43 @@
+---
+import { constants } from "../utils/constants";
+
+import Bluesky from "../images/svgs/bluesky.svg";
+import Email from "../images/svgs/email.svg";
+import Instagram from "../images/svgs/instagram.svg";
+import Threads from "../images/svgs/threads.svg";
+import X from "../images/svgs/x.svg";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <!-- BANNER -->
+  <div
+    class="banner h-20 border-b-[3px] mb-20 border-[#F7F3ED] text-[#F7F3ED] font-display uppercase text-xl tracking-widest overflow-x-hidden"
+    data-text="STOP WATCHING TUTORIALS • START BUILDING • GET YOUR HANDS DIRTY • CREATE REAL PROJECTS • SHOWCASE YOUR WORK • ONE CHALLENGE AT A TIME • "
+  >
+  </div>
+
+  <ul class="social-media">
+    <li><a href={constants.X}><X /></a></li>
+    <li><a href={constants.INSTAGRAM}><Instagram /></a></li>
+    <li><a href={constants.BLUESKY}><Bluesky /></a></li>
+    <li><a href={constants.THREADS}><Threads /></a></li>
+    <li><a href={constants.EMAIL}><Email /></a></li>
+  </ul>
+
+  <ul class="legal">
+    <li><a href="/disclaimers">Disclaimers</a></li>
+    <li><a href="/terms">Terms and Conditions</a></li>
+    <li><a href="/privacy">Privacy Policy</a></li>
+    <li><a href="/refund">Refund Policy</a></li>
+  </ul>
+
+  <div class="legal text-center">
+    Copyright &copy;{currentYear}. <a
+      href={constants.AHHA}
+      target="_blank"
+      rel="noopener noreferrer">Ah Ha Creative, LLC</a
+    >. All Rights Reserved.
+  </div>
+</footer>

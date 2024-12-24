@@ -1,0 +1,180 @@
+---
+import { constants } from "../utils/constants";
+
+import Layout from "../layouts/Layout.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Faqs from "../components/Faqs.astro";
+import Pricing from "../components/Pricing.astro";
+---
+
+<Layout>
+  <div class="mb-[60px] mt-10">
+    <img
+      src="/images/logo.svg"
+      alt="Weekly CSS"
+      class="h-[304px] w-full object-cover"
+    />
+  </div>
+
+  <h1
+    class="text-[42px] leading-[53px] font-bold text-center font-display mb-2"
+  >
+    Transform Your CSS Skills:<br />Weekly Challenges, Real Growth
+  </h1>
+  <h2
+    class="text-center font-display font-xl leading-[35px] font-medium max-w-[850px] mx-auto mb-12"
+  >
+    Practice CSS that matters. Weekly challenges crafted to build your
+    confidence and showcase your abilities.
+  </h2>
+
+  <div class="text-center mb-[25px]">
+    <a href={constants.GUMROAD} class="button action"> Accept the Challenge </a>
+  </div>
+
+  <div class="flex items-center gap-3 pr-[120px] mb-[60px]">
+    <div>
+      <img
+        src="/images/email.png"
+        srcset="/images/email@2x.png 2x, /images/email.png 1x"
+        alt="Email Inbox"
+      />
+    </div>
+
+    <div class="flex-1">
+      <p>
+        <strong>
+          Every Monday, you'll receive a fresh CSS challenge delivered to your
+          inbox.
+        </strong> Each challenge includes a polished design mockup and clear requirements
+        - your task is to bring it to life with CSS. From product cards to complex
+        layouts, each challenge is carefully crafted to build real-world skills you
+        can showcase in your portfolio.
+      </p>
+    </div>
+  </div>
+
+  <section class="two-column-list">
+    <div class="heading">
+      <h2>Types of Challenges</h2>
+    </div>
+    <div class="heading">
+      <h2>Skill Requirement</h2>
+    </div>
+
+    <div>
+      <ul class="checklist">
+        <li>Responsive layouts and grid systems</li>
+        <li>Interactive components and animations</li>
+        <li>Card designs and content presentation</li>
+        <li>Form elements and input styling</li>
+        <li>Navigation patterns and menus</li>
+        <li>Modern CSS features like Grid, Flexbox, and Custom Properties</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="checklist">
+        <li>Know JavaScript fundamentals</li>
+        <li>Can build basic layouts</li>
+        <li>Want to push beyond tutorials</li>
+        <li>Are ready to tackle real design challenges</li>
+        <li>Aim to build an impressive portfolio</li>
+      </ul>
+    </div>
+
+    <div class="col-span-2 border-t-4 border-black">
+      <p class="max-w-[750px] text-center mx-auto my-10">
+        While you should be comfortable with CSS basics, each challenge can be
+        approached at your skill level - start simple, then enhance as you
+        learn.
+      </p>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section
+    class="border-b-thick border-black bg-tidal mix-blend-multiply mb-[60px]"
+  >
+    <h2
+      class="font-display text-xl font-medium text-center pt-[60px] pb-5 with-rulers"
+    >
+      See How It Works
+    </h2>
+
+    <div class="aspect-video max-w-[800px] mx-auto mb-[100px]">
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/2svXMFrob3I?si=TcQUKaUQBaM-b3yN"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- LIST OF 3 FEATURES -->
+  <section></section>
+
+  <section class="two-column-list mb-10">
+    <div class="heading">
+      <h2>Outcomes</h2>
+    </div>
+    <div class="heading"><h2>Time Investment</h2></div>
+    <div>
+      <ul class="checklist">
+        <li>Confidently tackle complex layouts</li>
+        <li>Master responsive design techniques</li>
+        <li>Build sophisticated animations and interactions</li>
+        <li>Create polished, professional components</li>
+        <li>Develop a substantial portfolio of work</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="checklist">
+        <li>Flexible to your skill level and approach</li>
+        <li>Work at your own pace</li>
+        <li>No deadlines or pressure</li>
+        <li>Complete when you're satisfied with your result</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <!-- <Testimonials /> -->
+
+  <!-- HEY I'M AMY -->
+  <section
+    class="max-w-[1100px] w-full grid grid-cols-[48%_54%] gap-[48px] mx-auto mb-[112px] pt-12"
+  >
+    <div>
+      <img src="/images/avatar.jpg" alt="Amy" />
+    </div>
+    <div>
+      <h2 class="font-display text-[111px] font-bold leading-none mb-7">
+        <span
+          class="font-handwriting text-[115px] leading-none block font-normal"
+          >hey!</span
+        > I'm Amy
+      </h2>
+      <h3 class="text-3xl font-medium leading-tight font-display mb-6">
+        I speak 2 languages:<br />design & development
+      </h3>
+      <p>
+        I’m a Lead Maintainer on the RedwoodJS core team 🌲. I have over 20
+        years of web experience, officially making me a granny 👵 in Internet
+        years. I live right outside of Nashville, TN with my husband 👨, 3
+        adorable kids 👦👧👧, and 2 dogs 🐶🐶. If I’m not sitting in front of my
+        computer making things, I’m hanging out with family and friends. I love
+        streaming all the things 📺, playing cards ♠️, reading 📚, and drinking
+        coffee ☕. Lots of coffee. ☕☕☕
+      </p>
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS -->
+  <Faqs />
+
+  <!-- PRICING -->
+  <Pricing />
+</Layout>

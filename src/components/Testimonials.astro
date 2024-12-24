@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import Star from "../images/star.svg";
+
+// get all testimonials
+const allTestimonials = await getCollection("testimonials");
+---
+
+<section class="mb-[100px] border-b-thick border-black pb-[72px]">
+  <h2 class="center gap-4 text-3xl font-medium font-display mb-8">
+    <Star />
+    What People Are Saying
+    <Star />
+  </h2>
+
+  <div class="grid grid-cols-4 gap-5 mx-5">
+    {
+      allTestimonials.map(async (testimonial) => {
+        const { Content } = await render(testimonial);
+        return (
+          <div>
+            <div class="testimonial">
+              <Content />
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

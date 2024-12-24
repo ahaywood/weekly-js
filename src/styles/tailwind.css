@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "De Lionist";
+  src: url("/fonts/de_lionist-webfont.woff2") format("woff2"),
+    url("/fonts/de_lionist-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply font-sans text-lg leading-relaxed;
+  }
+
+  body {
+    background: url("/images/background.jpg") center top repeat;
+    @apply border-t-[14px] border-t-tidal;
+  }
+
+  footer {
+    @apply bg-cardinGreen pb-[75px];
+    /* there are additional social media styles (listed within @layer components) that get applied regardless of whether we're in the footer or not */
+    ul.social-media {
+      @apply mb-[70px];
+      a {
+        @apply text-tidal hover:text-melon;
+      }
+    }
+    .legal {
+      @apply text-white text-sm;
+      a {
+        @apply text-white hover:underline hover:text-melon;
+      }
+    }
+    ul.legal {
+      @apply flex gap-2 justify-center items-center mb-5;
+    }
+    .legal li:after {
+      content: "•";
+      @apply ml-2;
+    }
+    .legal li:last-child:after {
+      content: "";
+    }
+  }
+
+  svg {
+    @apply fill-current;
+  }
+}
+
+@layer components {
+  .button {
+    @apply text-xl font-medium py-8 px-12 font-display rounded-full leading-none inline-block;
+    &.action {
+      @apply bg-melon text-black hover:bg-melon-darker;
+    }
+    &.secondary {
+      @apply bg-black text-melon;
+    }
+  }
+
+  .two-column-list {
+    @apply border-y-thick border-black grid grid-cols-2;
+    .heading:nth-child(odd) {
+      @apply border-r-2 border-black border-b-[4px];
+    }
+    .heading:nth-child(even) {
+      @apply border-black border-b-[4px];
+    }
+    .heading h2 {
+      @apply mt-12 mb-6 font-display text-3xl font-medium;
+    }
+    > div:nth-child(odd) {
+      @apply pl-[130px] pr-[100px] border-r-2 border-black;
+    }
+    > div:nth-child(even) {
+      @apply pl-12 pr-[130px];
+    }
+  }
+
+  .checklist {
+    @apply pt-8 pb-10;
+    > li {
+      background: url("/images/check.svg") left 4px no-repeat;
+      @apply mb-2 pl-8;
+    }
+  }
+
+  .with-rulers {
+    @apply relative flex mx-auto gap-3 items-center justify-center;
+    &:before,
+    &:after {
+      content: "";
+      @apply block w-[55px] h-[2px] bg-black;
+    }
+    &:before {
+      @apply left-0;
+    }
+    &:after {
+      @apply right-0;
+    }
+  }
+
+  .faq-header {
+    @apply flex items-center mb-12;
+    &:before,
+    &:after {
+      content: "";
+      @apply block flex-1 border-b-[2px] border-black;
+    }
+  }
+
+  /* generic social media styles that get applied regardless of whether the social media is in the footer or not */
+  ul.social-media {
+    @apply flex gap-8 justify-center items-center;
+  }
+
+  .testimonial {
+    @apply border-[3px] border-black py-6 px-4;
+    p {
+      @apply text-base leading-normal;
+    }
+  }
+
+  .banner {
+    @apply relative;
+    &:before,
+    &:after {
+      content: attr(data-text);
+      animation: banner-tick 80s linear infinite;
+      @apply whitespace-nowrap absolute top-6;
+    }
+    &:before {
+      @apply left-0;
+    }
+    &:after {
+      @apply left-[2417px];
+    }
+  }
+
+  @keyframes banner-tick {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@layer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
+}
